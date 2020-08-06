@@ -21,7 +21,7 @@ abstract class TransactionDao {
     @Query("SELECT DISTINCT month FROM transactions order by month")
     abstract fun getMonths(): Flow<List<String>>
 
-    @Query("SELECT category as title, month, SUM(amount) FROM transactions group by title, month")
+    @Query("SELECT category as title, month, SUM(amount) as sum FROM transactions group by title, month")
     abstract fun getCategorySums(): Flow<List<CategorizedSum>>
 
     @Insert

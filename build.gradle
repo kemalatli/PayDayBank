@@ -69,6 +69,7 @@ subprojects {
             implementation Libs.View.constraintLayout
             implementation Libs.View.coil
             implementation Libs.View.coilSvg
+            implementation Libs.View.chart
 
             // MvRX
             implementation Libs.Mvrx.core

@@ -34,6 +34,7 @@ object Libs {
         val coil = "io.coil-kt:coil:0.9.5"
         val coilSvg = "io.coil-kt:coil-svg:0.9.5"
         val countrySelect = "com.hbb20:ccp:2.4.0"
+        val chart = "com.github.PhilJay:MPAndroidChart:v3.1.0"
     }
 
     object Insetter{
