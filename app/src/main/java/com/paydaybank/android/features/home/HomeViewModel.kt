@@ -1,31 +1,27 @@
 package com.paydaybank.android.features.home
 
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.paging.LivePagedListBuilder
 import com.paydaybank.android.core.base.BaseViewModel
+import com.paydaybank.data.repository.transaction.TransactionRepository
 import com.paydaybank.data.repository.user.UserRepository
-import com.paydaybank.data.repository.user.model.UserState
-import kotlinx.coroutines.flow.collect
 
 
 class HomeViewModel  @ViewModelInject constructor(
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val transactionRepository: TransactionRepository
 ): BaseViewModel() {
 
-    // User state for initial navigation logic
-    private val _userState = MutableLiveData<UserState>()
-    val userState: LiveData<UserState> get() = _userState
+
+    val paginatedTransactions = LivePagedListBuilder(
+        transactionRepository.getAllTransactions(), 10
+    ).build()
+
 
     init {
-        // Collect user state from user repository
-        launch {
-            userRepository.getUserState().collect {
-                _userState.postValue(it)
-            }
-        }
+
+        //val factory = transactionRepository.getAllTransactions()
+
     }
-
-
 
 }

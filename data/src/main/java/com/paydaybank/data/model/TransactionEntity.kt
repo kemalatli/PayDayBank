@@ -3,6 +3,7 @@ package com.paydaybank.data.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 @Entity(tableName = "transactions")
 data class TransactionEntity(
@@ -14,6 +15,7 @@ data class TransactionEntity(
     val amount:Double = 0.0,
     val vendor:String = "",
     val category:String = "",
-    @SerializedName("date_created")
-    val date:String = ""
+    val date: Date = Date(),
+    val month:String = "",
+    val time:String = ""
 )

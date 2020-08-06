@@ -1,7 +1,7 @@
 package com.paydaybank.data.repository.user.datasources
 
 import com.paydaybank.data.core.BaseScope
-import com.paydaybank.data.model.Customer
+import com.paydaybank.data.model.CustomerEntity
 import com.paydaybank.data.offline.AppDatabase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -12,11 +12,11 @@ class UserLocalDataSource @Inject constructor(
     private val appDatabase: AppDatabase
 ): BaseScope() {
 
-    suspend fun getCustomer():Customer?{
+    suspend fun getCustomer():CustomerEntity?{
         return appDatabase.customerDao().getCustomer()
     }
 
-    fun persistCustomer(customer: Customer) {
+    fun persistCustomer(customer: CustomerEntity) {
         launch {
             appDatabase.customerDao().updateCustomer(customer)
         }

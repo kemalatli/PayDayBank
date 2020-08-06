@@ -5,8 +5,8 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
-@Entity
-data class Customer(
+@Entity(tableName = "customer")
+data class CustomerEntity(
     @SerializedName("id")
     @PrimaryKey
     val id:Int = 0,

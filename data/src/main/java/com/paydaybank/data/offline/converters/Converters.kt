@@ -12,7 +12,7 @@ class Converters {
 
     @TypeConverter
     fun dateToTimestamp(date: Date?): Long? {
-        return date?.time
+        return if(date!=null) date.time * 1L else 0L
     }
 
 }
