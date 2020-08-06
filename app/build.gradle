@@ -56,3 +56,7 @@ android {
         freeCompilerArgs = ["-Xallow-result-return-type"]
     }
 }
+
+dependencies {
+    implementation project(path: ':data')
+}

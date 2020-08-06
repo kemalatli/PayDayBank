@@ -1,0 +1,29 @@
+import com.paydaybank.build.Libs
+
+plugins {
+    id 'com.android.library'
+    id  "kotlin-android"
+    id  "kotlin-android-extensions"
+    id  "kotlin-kapt"
+    id  "dagger.hilt.android.plugin"
+}
+
+android {
+
+    compileSdkVersion Libs.App.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Libs.App.minSdkVersion
+        targetSdkVersion Libs.App.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+}
