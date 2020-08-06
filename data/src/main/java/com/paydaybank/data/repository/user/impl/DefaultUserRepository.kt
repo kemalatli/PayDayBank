@@ -32,7 +32,17 @@ class DefaultUserRepository @Inject constructor(
             userState.value =if(customer==null){
                 UserState.Unauthenticated
             }else{
+                refreshUser(customer.id)
                 UserState.Authenticated(customer)
+            }
+        }
+    }
+
+    private fun refreshUser(id:Int){
+        launch {
+            val customer = userRemoteDataSource.fetchClient(id)
+            if (customer != null) {
+                userLocalDataSource.persistCustomer(customer)
             }
         }
     }
@@ -42,6 +52,7 @@ class DefaultUserRepository @Inject constructor(
 
     override suspend fun signIn(input: InputSignIn){
         try{
+
             // Set user state to loading
             userState.value = UserState.Loading
 

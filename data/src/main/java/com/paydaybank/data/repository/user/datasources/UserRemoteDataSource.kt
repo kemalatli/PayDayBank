@@ -12,4 +12,6 @@ class UserRemoteDataSource @Inject constructor(
 
     suspend fun authenticateCustomer(inputSignIn: InputSignIn) = payDayService.authenticate(inputSignIn)
 
+    suspend fun fetchClient(id: Int) = payDayService.getCustomer(id)
+
 }
