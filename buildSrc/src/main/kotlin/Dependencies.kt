@@ -105,5 +105,12 @@ object Libs {
         const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
     }
 
+    object Room{
+        private const val version = "2.2.5"
+        const val core = "androidx.room:room-runtime:$version"
+        const val processor = "androidx.room:room-compiler:$version"
+        const val coroutines = "androidx.room:room-ktx:$version"
+    }
+
 
 }

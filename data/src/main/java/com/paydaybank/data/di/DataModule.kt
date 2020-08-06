@@ -1,11 +1,13 @@
 package com.paydaybank.data.di
 
-import com.paydaybank.data.repository.user.UserRepository
-import com.paydaybank.data.repository.user.impl.DefaultUserRepository
-import com.paydaybank.data.service.PayBankService
+import android.content.Context
+import androidx.room.Room
+import com.paydaybank.data.offline.AppDatabase
+import com.paydaybank.data.service.PayDayService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -32,7 +34,9 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideRetrofitClient(okHttpClient: OkHttpClient, @Named("ServiceEndPoint") serviceEndpoint:String) = Retrofit.Builder()
+    fun provideRetrofitClient(
+        okHttpClient: OkHttpClient,
+        @Named("ServiceEndPoint") serviceEndpoint:String) = Retrofit.Builder()
         .client(okHttpClient)
         .baseUrl(serviceEndpoint)
         .addConverterFactory(GsonConverterFactory.create())
@@ -41,13 +45,13 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun providePayBankService(retrofit:Retrofit) = retrofit.create(PayBankService::class.java)
+    fun providePayBankService(retrofit:Retrofit) = retrofit.create(PayDayService::class.java)
 
 
     @Singleton
     @Provides
-    fun provideUserRepository():UserRepository = DefaultUserRepository()
-
+    fun provideAppDatabase(@ApplicationContext context: Context):AppDatabase =
+        Room.databaseBuilder(context, AppDatabase::class.java, "payday").build()
 
 
 }

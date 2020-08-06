@@ -1,4 +1,4 @@
-package com.paydaybank.android.launcher
+package com.paydaybank.android.features.home
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
@@ -8,9 +8,10 @@ import com.paydaybank.data.repository.user.UserRepository
 import com.paydaybank.data.repository.user.model.UserState
 import kotlinx.coroutines.flow.collect
 
-class LauncherViewModel  @ViewModelInject constructor(
+
+class HomeViewModel  @ViewModelInject constructor(
     private val userRepository: UserRepository
-):BaseViewModel() {
+): BaseViewModel() {
 
     // User state for initial navigation logic
     private val _userState = MutableLiveData<UserState>()
@@ -24,5 +25,7 @@ class LauncherViewModel  @ViewModelInject constructor(
             }
         }
     }
+
+
 
 }

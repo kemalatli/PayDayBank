@@ -108,10 +108,15 @@ subprojects {
             implementation Libs.Insetter.kotlin
             implementation Libs.Insetter.widgets
 
+            // Room
+            implementation Libs.Room.core
+            implementation Libs.Room.coroutines
+
             // Kapt
             kapt Libs.Epoxy.processor
             kapt Libs.Dagger.processor
             kapt Libs.Dagger.jetpackProcessor
+            kapt Libs.Room.processor
 
         }
 

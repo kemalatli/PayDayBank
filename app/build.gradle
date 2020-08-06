@@ -32,13 +32,13 @@ android {
             dimension "default"
             applicationId Libs.App.applicationId
             resValue "string", "app_name", "PayDay Bank"
-            buildConfigField 'String', 'ServiceEndPoint', "\"http://Socialwire-env.89hptvnbyn.eu-west-2.elasticbeanstalk.com\""
+            buildConfigField 'String', 'ServiceEndPoint', "\"http://10.0.2.2:3000/\""
         }
         developmentEnvironment {
             dimension "default"
             applicationIdSuffix ".dev"
             resValue "string", "app_name", "PayDay Bank Dev"
-            buildConfigField 'String', 'ServiceEndPoint', "\"http://Socialwire-env.89hptvnbyn.eu-west-2.elasticbeanstalk.com\""
+            buildConfigField 'String', 'ServiceEndPoint', "\"http://10.0.2.2:3000/\""
         }
     }
 
