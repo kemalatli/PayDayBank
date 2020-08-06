@@ -1,0 +1,58 @@
+import com.paydaybank.build.Libs
+
+plugins {
+    id  "com.android.application"
+    id  "kotlin-android"
+    id  "kotlin-android-extensions"
+    id  "kotlin-kapt"
+    id  "dagger.hilt.android.plugin"
+}
+
+android {
+
+    compileSdkVersion Libs.App.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion Libs.App.minSdkVersion
+        targetSdkVersion Libs.App.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        productionEnvironment {
+            dimension "default"
+            applicationId Libs.App.applicationId
+            resValue "string", "app_name", "PayDay Bank"
+            buildConfigField 'String', 'ServiceEndPoint', "\"http://Socialwire-env.89hptvnbyn.eu-west-2.elasticbeanstalk.com\""
+        }
+        developmentEnvironment {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "PayDay Bank Dev"
+            buildConfigField 'String', 'ServiceEndPoint', "\"http://Socialwire-env.89hptvnbyn.eu-west-2.elasticbeanstalk.com\""
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+        freeCompilerArgs = ["-Xallow-result-return-type"]
+    }
+}
