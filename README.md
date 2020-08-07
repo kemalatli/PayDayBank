@@ -2,7 +2,7 @@
 PayDay Bank is a tiny MVP banking mobile application, which enables users to view monthly expenditures, incomes and transactions. It is far from being a complete banking solution in its current state, but the adapted architecture was implemented with the question of scalability, testablity and maintainablity in mind.
 
  ![](https://github.com/kemalatli/PayDayBank/blob/main/art/day.jpg)
-  ![](https://github.com/kemalatli/PayDayBank/blob/main/art/night.j##pg)
+ ![](https://github.com/kemalatli/PayDayBank/blob/main/art/night.jpg)
   
 ## Architecture
 Pay Day App tries to follow MVVM architecture pattern. The app considers local database as the single source of truth, which adds offline capabilities to the app. In case of low and no connection states, the app is able to provide offline data at local database.
