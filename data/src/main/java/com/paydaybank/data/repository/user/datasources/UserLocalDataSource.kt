@@ -22,4 +22,10 @@ class UserLocalDataSource @Inject constructor(
         }
     }
 
+    suspend fun wipeUserData() {
+        appDatabase.customerDao().deleteCustomer()
+        appDatabase.accountDao().deleteAccounts()
+        appDatabase.transactionDao().deleteTransactions()
+    }
+
 }

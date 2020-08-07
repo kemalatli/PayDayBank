@@ -4,4 +4,8 @@
     <string name="auth_hint_email">Email Address</string>
     <string name="auth_hint_password">Password</string>
     <string name="auth_sign_in">Sign In</string>
+    <string name="welcome_logout">Log out</string>
+    <string name="welcome_logout_title">Would you like to logout from current account?</string>
+    <string name="welcome_logout_positive">Yes, Logout now</string>
+    <string name="welcome_logout_negative">No</string>
 </resources>

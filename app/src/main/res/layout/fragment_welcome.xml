@@ -8,6 +8,7 @@
         android:id="@+id/toolbar"
         app:title="@string/app_name"
         app:logo="@mipmap/ic_launcher"
+        app:menu="@menu/menu_welcome"
         android:elevation="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

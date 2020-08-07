@@ -3,6 +3,7 @@ package com.paydaybank.android.features.home.welcome
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.EpoxyControllerAdapter
@@ -40,6 +41,20 @@ class WelcomeFragment: BaseFragment(R.layout.fragment_welcome) {
         // Inset views
         binding.toolbar.applySystemWindowInsetsToPadding(top = true)
         binding.recyclerView.applySystemWindowInsetsToPadding(bottom = true)
+
+        // Menu items
+        binding.toolbar.menu.getItem(0).setOnMenuItemClickListener {
+            AlertDialog.Builder(requireContext())
+                .setTitle(R.string.welcome_logout_title)
+                .setPositiveButton(R.string.welcome_logout_positive) { _, _ ->
+                    viewModel.logout()
+                }
+                .setNegativeButton(R.string.welcome_logout_negative) { _, _ ->}
+                .create()
+                .show()
+
+            return@setOnMenuItemClickListener true
+        }
 
         // Bind controller
         val controller = PagingController<TransactionEntity>(
@@ -80,11 +95,6 @@ class WelcomeFragment: BaseFragment(R.layout.fragment_welcome) {
 
         // Observe paginated transactions
         observe(viewModel.paginatedTransactions, controller::submitList)
-    }
-
-    override fun onDestroyView() {
-        binding.recyclerView.removeItemDecoration(itemDecoration)
-        super.onDestroyView()
     }
 
     private fun refreshViewStates(homeState: HomeState?) {

@@ -8,6 +8,7 @@ import androidx.paging.LivePagedListBuilder
 import com.paydaybank.android.core.base.BaseViewModel
 import com.paydaybank.data.repository.transaction.TransactionRepository
 import com.paydaybank.data.repository.user.UserRepository
+import com.paydaybank.data.repository.user.model.UserState
 import kotlinx.coroutines.flow.collect
 
 
@@ -19,6 +20,11 @@ class HomeViewModel  @ViewModelInject constructor(
     // Home state
     private val _state:MutableLiveData<HomeState> = MutableLiveData()
     val state: LiveData<HomeState> = _state
+
+
+    // User state
+    private val _userState = MutableLiveData<UserState>()
+    val userState: LiveData<UserState> get() = _userState
 
 
     val paginatedTransactions = Transformations.switchMap(state){
@@ -38,13 +44,24 @@ class HomeViewModel  @ViewModelInject constructor(
             }
         }
 
+        // Collect user state from user repository
+        launch {
+            userRepository.getUserState().collect {
+                _userState.postValue(it)
+            }
+        }
+
     }
 
     fun changeMonth(month:String) =  chageState { copy(selectedMonth = month) }
+
+    fun logout() = userRepository.logout()
 
     private fun chageState(block:HomeState.()->HomeState){
         val instantState = state.value ?: HomeState()
         _state.postValue(block(instantState))
     }
+
+
 
 }

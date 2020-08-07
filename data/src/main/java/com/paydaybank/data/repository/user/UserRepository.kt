@@ -10,4 +10,6 @@ interface UserRepository {
 
     suspend fun signIn(input:InputSignIn)
 
+    fun logout()
+
 }

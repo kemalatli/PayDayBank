@@ -76,4 +76,12 @@ class DefaultUserRepository @Inject constructor(
         }
     }
 
+    override fun logout() {
+        launch {
+            userLocalDataSource.wipeUserData()
+            // Reset user state
+            userState.value = UserState.Unauthenticated
+        }
+    }
+
 }
