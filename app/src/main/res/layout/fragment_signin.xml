@@ -76,6 +76,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/submit"
+        android:textAllCaps="false"
         android:text="@string/auth_sign_in"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,6 +90,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/createAccount"
+        android:textAllCaps="false"
         android:layout_marginTop="10dp"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         app:layout_constraintEnd_toEndOf="parent"
