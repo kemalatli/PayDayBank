@@ -3,17 +3,25 @@
     <style name="Theme.PayDayBank" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorPrimary">@color/primary_200</item>
+        <item name="colorPrimaryDark">@color/primary_700</item>
         <item name="colorOnPrimary">@color/black</item>
+        <item name="android:colorBackground">@color/black_light</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teel_200</item>
-        <item name="colorSecondaryVariant">@color/teel_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/secondary_200</item>
+        <item name="colorSecondaryVariant">@color/secondary_700</item>
+        <item name="colorOnSecondary">@color/white</item>
 
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- Set the status bar to 50% translucent white -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Set the navigation bar to 50% translucent white -->
+        <item name="android:navigationBarColor">#80555555</item>
 
     </style>
 

@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="primary">#2F9DDC</color>
+    <color name="primary_700">#101437</color>
+    <color name="primary_300">#2F9DDC</color>
+    <color name="primary_200">#55A9DA</color>
 
-    <color name="purple_200">#BB86FC</color>
-    <color name="purple_500">#6200EE</color>
-    <color name="purple_700">#3700B3</color>
-    <color name="teel_200">#03DAC6</color>
-    <color name="teel_700">#018786</color>
+    <color name="secondary_700">#3700B3</color>
+    <color name="secondary_300">#3C00C5</color>
+    <color name="secondary_200">#4100D5</color>
+
     <color name="black">#000000</color>
+    <color name="black_light">#1E1E1E</color>
     <color name="white">#FFFFFF</color>
-
+    <color name="white_light">#BDCADA</color>
 
     <color name="chart_color1">#EC8888</color>
     <color name="chart_color2">#FFDB92</color>
@@ -24,4 +26,5 @@
 
     <color name="balance_green">#2B8025</color>
     <color name="balance_red">#8A0505</color>
+
 </resources>

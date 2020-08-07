@@ -3,13 +3,14 @@
     <style name="Theme.PayDayBank" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
 
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorPrimary">@color/primary_300</item>
+        <item name="colorPrimaryDark">@color/primary_700</item>
         <item name="colorOnPrimary">@color/white</item>
+        <item name="android:colorBackground">@color/white_light</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teel_200</item>
-        <item name="colorSecondaryVariant">@color/teel_700</item>
+        <item name="colorSecondary">@color/secondary_200</item>
+        <item name="colorSecondaryVariant">@color/secondary_700</item>
         <item name="colorOnSecondary">@color/black</item>
 
         <!-- Customize your theme here. -->

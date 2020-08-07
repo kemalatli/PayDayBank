@@ -35,6 +35,7 @@ class ModelViewMonthControl @JvmOverloads constructor(context: Context, attrs: A
     init {
         // Inflate
         inflate(context, R.layout.model_view_month_control, this)
+        cardElevation = 0f
         // Set views
         last = findViewById(R.id.last)
         first = findViewById(R.id.first)
