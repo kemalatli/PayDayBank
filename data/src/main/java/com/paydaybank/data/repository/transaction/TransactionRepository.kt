@@ -11,8 +11,6 @@ interface TransactionRepository {
 
     fun getTransactionsByMonth(month:String):DataSource.Factory<Int, TransactionEntity>
 
-    suspend fun getMonths(): Flow<List<String>>
-
     suspend fun getCategorizedSums(): Flow<List<CategorizedSum>>
 
 }

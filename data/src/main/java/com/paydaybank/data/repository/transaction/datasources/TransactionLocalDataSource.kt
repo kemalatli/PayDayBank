@@ -25,8 +25,6 @@ class TransactionLocalDataSource @Inject constructor(
         }
     }
 
-    fun getMonths() = appDatabase.transactionDao().getMonths()
-
     fun getCategorySums() = appDatabase.transactionDao().getCategorySums()
 
     fun persistAccounts(acccounts: List<AccountEntity>) {

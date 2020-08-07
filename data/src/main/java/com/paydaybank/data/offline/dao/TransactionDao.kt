@@ -18,9 +18,6 @@ abstract class TransactionDao {
     @Query("SELECT * FROM transactions where month=:month order by time desc")
     abstract fun getTransactionsByMonth(month:String): DataSource.Factory<Int, TransactionEntity>
 
-    @Query("SELECT DISTINCT month FROM transactions order by month")
-    abstract fun getMonths(): Flow<List<String>>
-
     @Query("SELECT category as title, month, SUM(amount) as sum FROM transactions group by title, month")
     abstract fun getCategorySums(): Flow<List<CategorizedSum>>
 

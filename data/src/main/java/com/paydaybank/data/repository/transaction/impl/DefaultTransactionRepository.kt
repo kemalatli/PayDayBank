@@ -49,8 +49,6 @@ class DefaultTransactionRepository @Inject constructor(
 
     override fun getTransactionsByMonth(month: String): DataSource.Factory<Int, TransactionEntity> = transactionLocalDataSource.getPaginatedTransactions(month)
 
-    override suspend fun getMonths(): Flow<List<String>> = transactionLocalDataSource.getMonths()
-
     override suspend fun getCategorizedSums(): Flow<List<CategorizedSum>> = transactionLocalDataSource.getCategorySums()
 
 
