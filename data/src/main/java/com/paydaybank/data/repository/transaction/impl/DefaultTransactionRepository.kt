@@ -11,7 +11,6 @@ import com.paydaybank.data.repository.user.UserRepository
 import com.paydaybank.data.repository.user.model.UserState
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton

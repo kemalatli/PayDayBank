@@ -10,4 +10,18 @@
     <color name="teel_700">#018786</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+
+
+    <color name="chart_color1">#EC8888</color>
+    <color name="chart_color2">#FFDB92</color>
+    <color name="chart_color3">#ACDA90</color>
+    <color name="chart_color4">#94ECE1</color>
+    <color name="chart_color5">#6686FA</color>
+    <color name="chart_color6">#AF70F6</color>
+    <color name="chart_color7">#D14E83</color>
+    <color name="chart_color8">#E69A68</color>
+    <color name="chart_color9">#C13535</color>
+
+    <color name="balance_green">#2B8025</color>
+    <color name="balance_red">#8A0505</color>
 </resources>

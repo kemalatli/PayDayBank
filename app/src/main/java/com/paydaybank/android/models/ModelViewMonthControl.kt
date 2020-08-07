@@ -11,10 +11,7 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.textview.MaterialTextView
 import com.paydaybank.android.R
 import com.paydaybank.android.models.callbacks.MonthControlListener
-import com.paydaybank.data.model.TransactionEntity
-import com.paydaybank.data.repository.transaction.model.CategorizedSum
 import timber.log.Timber
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 

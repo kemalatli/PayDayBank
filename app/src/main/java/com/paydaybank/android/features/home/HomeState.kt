@@ -8,6 +8,6 @@ data class HomeState(
     val selectedMonth:String = ""
 ){
 
-    val filteredSums:List<CategorizedSum> get() = categorySums.filter { it.month == selectedMonth }
+    val filteredSums:List<CategorizedSum> get() = categorySums.filter { it.month == selectedMonth }.sortedByDescending { it.sum }
 
 }

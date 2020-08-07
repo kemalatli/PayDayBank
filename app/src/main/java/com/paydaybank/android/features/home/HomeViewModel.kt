@@ -9,7 +9,6 @@ import com.paydaybank.android.core.base.BaseViewModel
 import com.paydaybank.data.repository.transaction.TransactionRepository
 import com.paydaybank.data.repository.user.UserRepository
 import kotlinx.coroutines.flow.collect
-import timber.log.Timber
 
 
 class HomeViewModel  @ViewModelInject constructor(

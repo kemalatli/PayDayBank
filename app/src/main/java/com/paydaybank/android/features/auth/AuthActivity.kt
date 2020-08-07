@@ -8,7 +8,6 @@ import com.paydaybank.android.core.extensions.observe
 import com.paydaybank.android.features.home.HomeActivity
 import com.paydaybank.data.repository.user.model.UserState
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class AuthActivity: BaseNavigationActivity() {

@@ -9,7 +9,6 @@ import com.paydaybank.android.core.delegate.viewBinding
 import com.paydaybank.android.core.extensions.observe
 import com.paydaybank.android.databinding.FragmentSigninBinding
 import com.paydaybank.android.features.auth.AuthViewModel
-import com.paydaybank.android.features.home.HomeActivity
 import com.paydaybank.data.repository.user.model.UserState
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -6,44 +6,38 @@ import androidx.core.content.ContextCompat
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.textview.MaterialTextView
 import com.paydaybank.android.R
 import com.paydaybank.data.model.TransactionEntity
+import com.paydaybank.data.repository.transaction.model.CategorizedSum
 import java.text.SimpleDateFormat
 import java.util.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
-class ModelViewTransaction @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : MaterialCardView(context, attrs, defStyleAttr) {
+class ModelViewCategory @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : MaterialCardView(context, attrs, defStyleAttr) {
 
 
     private val category: MaterialTextView
-    private val vendor: MaterialTextView
     private val price: MaterialTextView
-    private val date: MaterialTextView
 
 
     init {
         // Inflate
-        inflate(context, R.layout.model_view_transaction, this)
+        inflate(context, R.layout.model_view_category, this)
         shapeAppearanceModel =  ShapeAppearanceModel().withCornerSize(0f)
         // Set views
         category = findViewById(R.id.category)
-        vendor = findViewById(R.id.vendor)
         price = findViewById(R.id.price)
-        date = findViewById(R.id.date)
     }
 
     @ModelProp
-    fun transaction(transaction: TransactionEntity?){
-        if(transaction==null) return
-        category.text = transaction.category
-        vendor.text = transaction.vendor
-        price.text = String.format("%.2f", transaction.amount)
-        date.text = SimpleDateFormat("dd\nMMM", Locale.getDefault()).format(transaction.date)
+    fun categorizedSum(categorizedSum: CategorizedSum?){
+        if(categorizedSum==null) return
+        category.text = categorizedSum.title
+        price.text = String.format("%.2f", categorizedSum.sum)
         // Price color
-        val clr = ContextCompat.getColor(context, if(transaction.amount>0) R.color.balance_green else R.color.balance_red)
+        val clr = ContextCompat.getColor(context, if(categorizedSum.sum>0) R.color.balance_green else R.color.balance_red)
         price.setTextColor(clr)
     }
 

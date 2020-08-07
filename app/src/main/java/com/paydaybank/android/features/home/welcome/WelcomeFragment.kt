@@ -1,15 +1,11 @@
 package com.paydaybank.android.features.home.welcome
 
-import android.graphics.Canvas
 import android.graphics.Rect
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.marginStart
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.epoxy.EpoxyControllerAdapter
-import com.airbnb.epoxy.EpoxyModelGroup
 import com.paydaybank.android.R
 import com.paydaybank.android.core.base.BaseFragment
 import com.paydaybank.android.core.delegate.viewBinding
@@ -22,7 +18,6 @@ import com.paydaybank.android.features.home.HomeViewModel
 import com.paydaybank.android.models.*
 import com.paydaybank.data.model.TransactionEntity
 import dagger.hilt.android.AndroidEntryPoint
-import dev.chrisbanes.insetter.Insetter
 import dev.chrisbanes.insetter.applySystemWindowInsetsToPadding
 import timber.log.Timber
 
@@ -65,6 +60,12 @@ class WelcomeFragment: BaseFragment(R.layout.fragment_welcome) {
                     id("chart", "bar")
                     sums(homeState.filteredSums)
                 }
+                homeState.filteredSums.forEach {
+                    modelViewCategory {
+                        id("category", it.title)
+                        categorizedSum(it)
+                    }
+                }
                 modelViewPieChart {
                     id("chart", "pie")
                     sums(homeState.filteredSums)
@@ -103,6 +104,7 @@ class WelcomeFragment: BaseFragment(R.layout.fragment_welcome) {
                         ModelViewChartModel_::class -> outRect.set(20.asDp,20.asDp,20.asDp,10.asDp)
                         ModelViewPieChartModel_::class -> outRect.set(20.asDp,10.asDp,20.asDp,10.asDp)
                         ModelViewTransactionModel_::class -> outRect.set(20.asDp,0,20.asDp,0)
+                        ModelViewCategoryModel_::class -> outRect.set(20.asDp,0,20.asDp,0)
                         else -> outRect.setEmpty()
                     }
                 }

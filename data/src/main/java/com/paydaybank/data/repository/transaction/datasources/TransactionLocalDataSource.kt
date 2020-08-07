@@ -3,7 +3,6 @@ package com.paydaybank.data.repository.transaction.datasources
 import androidx.paging.DataSource
 import com.paydaybank.data.core.BaseScope
 import com.paydaybank.data.model.AccountEntity
-import com.paydaybank.data.model.CustomerEntity
 import com.paydaybank.data.model.TransactionEntity
 import com.paydaybank.data.offline.AppDatabase
 import kotlinx.coroutines.launch
