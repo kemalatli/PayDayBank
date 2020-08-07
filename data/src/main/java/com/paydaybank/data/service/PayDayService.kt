@@ -11,6 +11,9 @@ interface PayDayService {
     @POST("authenticate")
     suspend fun authenticate(@Body input: InputSignIn):CustomerEntity?
 
+    @POST("customers")
+    suspend fun createCustomer(@Body customerEntity: CustomerEntity):CustomerEntity?
+
     @GET("customers/{id}")
     suspend fun getCustomer(@Path("id") id: Int):CustomerEntity?
 

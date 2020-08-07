@@ -6,6 +6,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.paydaybank.android.core.base.BaseViewModel
+import com.paydaybank.data.model.CustomerEntity
 import com.paydaybank.data.repository.user.UserRepository
 import com.paydaybank.data.repository.user.model.InputSignIn
 import com.paydaybank.data.repository.user.model.UserState
@@ -57,6 +58,58 @@ class AuthViewModel  @ViewModelInject constructor(
 
     }
 
+    fun createAccount(
+        firstName:Editable?,
+        lastName:Editable?,
+        phoneNumber:Editable?,
+        mail:Editable?,
+        passwordTxt:Editable?,
+        gender:String
+    ) {
+        // Validate
+        if(firstName.isNullOrEmpty()) {
+            warn("Please input your first name")
+            return
+        }
+        if(lastName.isNullOrEmpty()) {
+            warn("Please input your last name")
+            return
+        }
+        if(phoneNumber.isNullOrEmpty()) {
+            warn("Please input your phone number")
+            return
+        }
+        if(mail.isNullOrEmpty()) {
+            warn("Please input your email address")
+            return
+        }
+        if(Patterns.EMAIL_ADDRESS.matcher(mail.toString()).matches().not()){
+            warn("Please input a valid email address")
+            return
+        }
+        if(passwordTxt.isNullOrEmpty()) {
+            warn("Please input your password")
+            return
+        }
+        if(passwordTxt.length <6) {
+            warn("Please input your password with more than 6 alpha-numeric characters")
+            return
+        }
+        // Create customer
+        val customer = CustomerEntity(
+            firstName = firstName.toString(),
+            lastName = lastName.toString(),
+            phone = phoneNumber.toString(),
+            email = mail.toString(),
+            gender = gender
+        ).apply {
+            password = passwordTxt.toString()
+        }
+        launch {
+            userRepository.createAccount(customer)
+        }
+    }
+
     override fun errorReceived(error: Throwable) {
         if(error is HttpException){
             when(error.code()){
@@ -64,5 +117,6 @@ class AuthViewModel  @ViewModelInject constructor(
             }
         }
     }
+
 
 }

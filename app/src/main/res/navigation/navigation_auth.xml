@@ -7,6 +7,16 @@
     <fragment
         android:id="@+id/signInFragment"
         android:name="com.paydaybank.android.features.auth.signin.SignInFragment"
-        android:label="SignInFragment" />
+        android:label="SignInFragment" >
+        <action
+            android:id="@+id/actionToCreateAccount"
+            app:destination="@id/createAccountFragment"
+            app:enterAnim="@anim/slide_in_from_bottom"
+            app:popExitAnim="@anim/slide_out_from_bottom" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.paydaybank.android.features.auth.create.CreateAccountFragment"
+        android:label="CreateAccountFragment" />
 
 </navigation>

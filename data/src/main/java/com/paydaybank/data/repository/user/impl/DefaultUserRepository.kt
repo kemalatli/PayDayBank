@@ -1,6 +1,7 @@
 package com.paydaybank.data.repository.user.impl
 
 import com.paydaybank.data.core.BaseScope
+import com.paydaybank.data.model.CustomerEntity
 import com.paydaybank.data.repository.user.UserRepository
 import com.paydaybank.data.repository.user.datasources.UserLocalDataSource
 import com.paydaybank.data.repository.user.datasources.UserRemoteDataSource
@@ -57,6 +58,33 @@ class DefaultUserRepository @Inject constructor(
 
             // Get remote authentication
             val customer = userRemoteDataSource.authenticateCustomer(input)
+
+            // Set authentication state
+            if(customer==null){
+                userState.value = UserState.FailedSignIn("Sign in failed")
+            }else{
+                userLocalDataSource.persistCustomer(customer)
+                userState.value = UserState.Authenticated(customer)
+            }
+
+        }catch (ex:Exception){
+
+            // Reset user state
+            userState.value = UserState.Unauthenticated
+
+            // Throw exception back to receiver
+            throw ex
+        }
+    }
+
+    override suspend fun createAccount(newCustomer: CustomerEntity) {
+        try{
+
+            // Set user state to loading
+            userState.value = UserState.Loading
+
+            // Get remote authentication
+            val customer = userRemoteDataSource.createCustomer(newCustomer)
 
             // Set authentication state
             if(customer==null){

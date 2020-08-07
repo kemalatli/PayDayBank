@@ -1,12 +1,14 @@
 package com.paydaybank.data.model
 
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.util.*
 
 @Entity(tableName = "customer")
 data class CustomerEntity(
+
     @SerializedName("id")
     @PrimaryKey
     val id:Int = 0,
@@ -18,4 +20,9 @@ data class CustomerEntity(
     val email:String = "",
     val dob: Date = Date(),
     val phone:String = ""
-)
+){
+
+    @Ignore
+    var password:String? = null
+
+}

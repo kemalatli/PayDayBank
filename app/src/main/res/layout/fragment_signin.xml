@@ -16,11 +16,25 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/emailHolder"
+        app:layout_constraintBottom_toTopOf="@id/title"
         android:src="@mipmap/ic_launcher"
         android:layout_width="160dp"
         android:layout_height="160dp">
     </androidx.appcompat.widget.AppCompatImageView>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/title"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="@string/auth_welcome"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        app:layout_constraintBottom_toTopOf="@id/emailHolder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+    </com.google.android.material.textview.MaterialTextView>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/emailHolder"
@@ -28,7 +42,7 @@
         android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img"
+        app:layout_constraintTop_toBottomOf="@id/title"
         app:layout_constraintBottom_toTopOf="@id/passwordHolder"
         android:layout_width="0dp"
         android:layout_height="wrap_content">
@@ -43,6 +57,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordHolder"
+        app:passwordToggleEnabled="true"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

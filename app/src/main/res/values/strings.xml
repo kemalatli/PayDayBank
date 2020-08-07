@@ -8,4 +8,12 @@
     <string name="welcome_logout_title">Would you like to logout from current account?</string>
     <string name="welcome_logout_positive">Yes, Logout now</string>
     <string name="welcome_logout_negative">No</string>
+    <string name="auth_hint_first_name">First Name</string>
+    <string name="auth_hint_last_name">Last Name</string>
+    <string name="auth_hint_phone">Phone Number</string>
+    <string name="auth_gender_male">Male</string>
+    <string name="auth_gender_female">Female</string>
+    <string name="auth_welcome">Welcome to Pay Day Bank</string>
+    <string name="auth_create_account_title">Create your account in a few steps</string>
+    <string name="auth_create_account_submit">Create Account</string>
 </resources>

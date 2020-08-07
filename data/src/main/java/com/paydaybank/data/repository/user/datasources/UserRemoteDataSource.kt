@@ -1,5 +1,6 @@
 package com.paydaybank.data.repository.user.datasources
 
+import com.paydaybank.data.model.CustomerEntity
 import com.paydaybank.data.repository.user.model.InputSignIn
 import com.paydaybank.data.service.PayDayService
 import javax.inject.Inject
@@ -11,6 +12,8 @@ class UserRemoteDataSource @Inject constructor(
 ) {
 
     suspend fun authenticateCustomer(inputSignIn: InputSignIn) = payDayService.authenticate(inputSignIn)
+
+    suspend fun createCustomer(customerEntity: CustomerEntity) = payDayService.createCustomer(customerEntity)
 
     suspend fun fetchClient(id: Int) = payDayService.getCustomer(id)
 
