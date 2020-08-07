@@ -12,6 +12,7 @@ import com.paydaybank.data.repository.user.model.InputSignIn
 import com.paydaybank.data.repository.user.model.UserState
 import kotlinx.coroutines.flow.collect
 import retrofit2.HttpException
+import java.util.regex.Pattern
 
 
 class AuthViewModel  @ViewModelInject constructor(
@@ -91,8 +92,9 @@ class AuthViewModel  @ViewModelInject constructor(
             warn("Please input your password")
             return
         }
-        if(passwordTxt.length <6) {
-            warn("Please input your password with more than 6 alpha-numeric characters")
+        val pattern = Pattern.compile("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W]).{6,64})")
+        if(!pattern.matcher(passwordTxt).matches()) {
+            warn("The password must be at least 6 characters long and include a number, lowercase letter, uppercase letter and special character")
             return
         }
         // Create customer

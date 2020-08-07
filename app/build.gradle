@@ -40,6 +40,12 @@ android {
             resValue "string", "app_name", "PayDay Bank Dev"
             buildConfigField 'String', 'ServiceEndPoint', "\"http://10.0.2.2:3000/\""
         }
+        realDeviceEnvironment {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "PayDay Bank Dev"
+            buildConfigField 'String', 'ServiceEndPoint', "\"http://192.168.1.41:3000/\""
+        }
     }
 
     buildFeatures {
