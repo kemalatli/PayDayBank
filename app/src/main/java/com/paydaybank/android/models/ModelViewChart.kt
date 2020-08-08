@@ -2,21 +2,17 @@ package com.paydaybank.android.models
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.core.content.ContextCompat
 import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.github.mikephil.charting.charts.BarChart
-import com.github.mikephil.charting.charts.HorizontalBarChart
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 import com.google.android.material.card.MaterialCardView
 import com.paydaybank.android.R
-import com.paydaybank.android.core.extensions.asDp
 import com.paydaybank.android.models.helper.ChartColorManager
 import com.paydaybank.data.repository.transaction.model.CategorizedSum
 import kotlin.math.abs

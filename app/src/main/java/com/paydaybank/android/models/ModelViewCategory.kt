@@ -9,10 +9,7 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.textview.MaterialTextView
 import com.paydaybank.android.R
-import com.paydaybank.data.model.TransactionEntity
 import com.paydaybank.data.repository.transaction.model.CategorizedSum
-import java.text.SimpleDateFormat
-import java.util.*
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 class ModelViewCategory @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : MaterialCardView(context, attrs, defStyleAttr) {

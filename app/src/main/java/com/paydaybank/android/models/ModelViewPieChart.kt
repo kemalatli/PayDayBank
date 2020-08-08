@@ -2,13 +2,10 @@ package com.paydaybank.android.models
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.core.content.ContextCompat
 import com.airbnb.epoxy.AfterPropsSet
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry

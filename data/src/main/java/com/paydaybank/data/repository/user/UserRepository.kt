@@ -8,8 +8,11 @@ import kotlinx.coroutines.flow.StateFlow
 interface UserRepository {
 
     fun getUserState(): StateFlow<UserState>
+
     fun logout()
+
     suspend fun signIn(input:InputSignIn)
+
     suspend fun createAccount(newCustomer: CustomerEntity)
 
 }

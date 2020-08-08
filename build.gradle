@@ -67,12 +67,7 @@ subprojects {
             // Views
             implementation Libs.View.material
             implementation Libs.View.constraintLayout
-            implementation Libs.View.coil
-            implementation Libs.View.coilSvg
             implementation Libs.View.chart
-
-            // MvRX
-            implementation Libs.Mvrx.core
 
             // Logging
             implementation Libs.Logging.timber
@@ -89,10 +84,6 @@ subprojects {
             // Navigation
             implementation Libs.Nav.fragment
             implementation Libs.Nav.ktx
-
-            // Image
-            implementation Libs.Fresco.fresco
-            implementation Libs.Fresco.fresco_gif
 
             // Network
             implementation Libs.OkHttp.okhttp

@@ -1,6 +1,5 @@
 package com.paydaybank.android.models.helper
 
-import android.util.SparseArray
 import com.paydaybank.android.R
 import com.paydaybank.data.repository.transaction.model.CategorizedSum
 

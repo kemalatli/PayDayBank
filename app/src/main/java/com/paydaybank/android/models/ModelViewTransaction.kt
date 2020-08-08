@@ -6,7 +6,6 @@ import androidx.core.content.ContextCompat
 import com.airbnb.epoxy.ModelProp
 import com.airbnb.epoxy.ModelView
 import com.google.android.material.card.MaterialCardView
-import com.google.android.material.shape.CornerFamily
 import com.google.android.material.shape.ShapeAppearanceModel
 import com.google.android.material.textview.MaterialTextView
 import com.paydaybank.android.R

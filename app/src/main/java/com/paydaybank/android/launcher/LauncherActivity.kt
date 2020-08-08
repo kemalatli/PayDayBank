@@ -9,7 +9,6 @@ import com.paydaybank.android.features.auth.AuthActivity
 import com.paydaybank.android.features.home.HomeActivity
 import com.paydaybank.data.repository.user.model.UserState
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class LauncherActivity: BaseActivity() {
