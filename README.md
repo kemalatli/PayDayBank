@@ -19,3 +19,11 @@ Pay Day App tries to follow MVVM architecture pattern. The app considers local d
 Pay Day Bank app keeps track of user state via local database and navigates users according to it. If user has been persisted in previous sessions, customer is directly navigated to monthly dashboard. It is a well known fact that none of the banking applications would allow direct access to the main app screen without authenticating user per session. This fact was ignored to demonstrate the user state persistence.
 
  ![](https://github.com/kemalatli/PayDayBank/blob/main/art/diagram2.png)
+ 
+ ## 3<sup>rd</sup> Party Open Source Libraries
+
+ * [Dagger Hilt](https://github.com/google/dagger/tree/master/java/dagger/hilt) as dependency injection framework
+ * [Retrofit](http://square.github.io/retrofit) for networking purposes
+ * [Epoxy](https://github.com/airbnb/epoxy) for recyclerview model building
+ * [Room](https://developer.android.com/topic/libraries/architecture/room) for local persistence
+ * [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) for threading and interlayer communications
