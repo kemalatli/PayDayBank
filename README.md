@@ -14,3 +14,8 @@ Pay Day App tries to follow MVVM architecture pattern. The app considers local d
  **ViewModel** is a powerful layer for surviving configuration changes and keeping track of UI state as well as getting and coordinating data between repository and view layers. It holds the view state in a live data to be observed from the view classes such as fragment or activity. On the hand, having it's own coroutines scope enables getting data from repository layer without being affected from view recreation.
  
  **Repository** has a key role in having data integrity and orchestration across local and remote data sources. The repository first provides the data from local db and then it requests fresh data from remote data source. Once the fresh data comes from remote data source, repository is responsible to update the local db with local data source. Since we are using observer pattern throughout the application with kotlin coroutine flows and live data, updated data will be sent to all observers. This enables us having the local database as the single source of truth.
+
+## User Stories Flow
+Pay Day Bank app keeps track of user state via local database and navigates users according to it. If user has been persisted in previous sessions, customer is directly navigated to monthly dashboard. It is a well known fact that none of the banking applications would allow direct access to the main app screen without authenticating user per session. This fact was ignored to demonstrate the user state persistence.
+
+ ![](https://github.com/kemalatli/PayDayBank/blob/main/art/diagram2.png)
