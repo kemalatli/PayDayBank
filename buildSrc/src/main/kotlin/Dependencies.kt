@@ -10,6 +10,14 @@ object Libs {
         val applicationId = "com.paydaybank.android"
     }
 
+    object LifeCycle{
+        private const val version = "2.1.0"
+        val viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$version"
+        val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$version"
+        val runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$version"
+        val ext = "androidx.lifecycle:lifecycle-extensions:$version"
+    }
+
     object PluginURLs{
         val jitpack = "https://jitpack.io"
         val sonatype = "https://oss.sonatype.org/content/repositories/snapshots/"

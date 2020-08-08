@@ -38,7 +38,7 @@ class ModelViewChart @JvmOverloads constructor(context: Context, attrs: Attribut
         val dataSet = BarDataSet(
             categorizedSums.mapIndexed { index, categorizedSum ->
                 BarEntry(
-                    (index + 1) * 6f,
+                    (index + 1) * 5f,
                     abs(categorizedSum.sum.toFloat())
                 )
             },
@@ -84,12 +84,19 @@ class ModelViewChart @JvmOverloads constructor(context: Context, attrs: Attribut
                 position = XAxis.XAxisPosition.BOTTOM
                 setDrawAxisLine(false)
                 setDrawGridLines(false)
+                granularity = 5f
+                isGranularityEnabled = true
                 axisMinimum = 0f
                 setDrawLabels(true)
                 valueFormatter = object: IndexAxisValueFormatter() {
                     override fun getFormattedValue(value: Float): String {
-                        val remain = value % 6f
-                        return if(remain==0f) categorizedSums.getOrNull((value/6f).toInt()-1)?.title ?: "" else ""
+                        val remain = (value.toInt()) % 5
+                        return if(remain==0){
+                            val index = (value.toInt())/5-1
+                            categorizedSums.getOrNull(index)?.title ?: ""
+                        }
+                        else
+                            ""
                     }
                 }
                 invalidate()
