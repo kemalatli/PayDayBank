@@ -67,6 +67,7 @@ class AuthViewModel  @ViewModelInject constructor(
         passwordTxt:Editable?,
         gender:String
     ) {
+
         // Validate
         if(firstName.isNullOrEmpty()) {
             warn("Please input your first name")
