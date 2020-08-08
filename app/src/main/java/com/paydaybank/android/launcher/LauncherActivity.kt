@@ -20,7 +20,6 @@ class LauncherActivity: BaseActivity() {
         super.onCreate(savedInstanceState)
         // Observe the user state for initial destination
         observe(viewModel.userState){
-            Timber.d("$it")
             when(it){
                 is UserState.Unauthenticated -> navigateToActivity(AuthActivity::class.java)
                 is UserState.Authenticated -> navigateToActivity(HomeActivity::class.java)
